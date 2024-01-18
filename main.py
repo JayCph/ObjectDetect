@@ -5,6 +5,12 @@ net = cv2.dnn.readNet("dnn_model/yolov4-tiny.weights", "dnn_model/yolov4-tiny.cf
 model = cv2.dnn_DetectionModel(net)
 model.setInputParams(size=(320,320), scale=1/255)
 
+#Load class lists
+classes = []
+with open("dnn_model/classes.txt", "r") as file_object:
+    for class_name in file_object.readlines():
+        print(class_name)
+
 #Initialize camera
 cap = cv2.VideoCapture(4)
 
