@@ -27,7 +27,7 @@ while True:
     
     #Object detection
     (class_ids, scores, bboxes) = model.detect(frame)
-    for class_id, bbox in zip(class_ids, scores, bboxes):
+    for class_id, score, bbox in zip(class_ids, scores, bboxes):
         (x, y, w, h) = bbox
         class_name = classes[class_id]
 
